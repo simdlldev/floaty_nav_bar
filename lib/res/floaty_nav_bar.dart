@@ -2,7 +2,7 @@ import 'package:floaty_nav_bar/res/models/floaty_action_button.dart';
 import 'package:floaty_nav_bar/res/models/floaty_shape.dart';
 import 'package:floaty_nav_bar/res/models/floaty_tab.dart';
 import 'package:floaty_nav_bar/res/utils/context_extension.dart';
-import 'package:floaty_nav_bar/res/widgets/floaty_item.dart';
+import 'package:floaty_nav_bar/res/widgets/floaty_tab_widget.dart';
 import 'package:floaty_nav_bar/res/widgets/gap_box.dart';
 import 'package:flutter/material.dart';
 

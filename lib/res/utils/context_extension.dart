@@ -65,7 +65,7 @@ extension ContextEx on BuildContext {
   /// and an offset of (0, 4).
   BoxShadow get boxShadow {
     return BoxShadow(
-      color: Colors.black.withOpacity(0.24),
+      color: Colors.black.withValues(alpha: 0.24),
       blurRadius: 10,
       spreadRadius: 0.0,
       offset: const Offset(0, 4),

@@ -1,3 +1,8 @@
+## [1.0.1] - 2025-02-05
+
+### Changed
+- Change `withOpacity` method to `withValues` to meet Flutter 2.27 changes.
+
 ## [1.0.0] - 2024-09-25
 
 ### Added
