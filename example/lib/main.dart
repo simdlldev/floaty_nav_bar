@@ -1,7 +1,10 @@
+import 'package:example/photo_hero.dart';
 import 'package:floaty_nav_bar/floaty_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hugeicons/hugeicons.dart';
+
+const imagePath = 'https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk';
 
 void main() {
   runApp(const MyApp());
@@ -40,8 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return [
       const Center(child: Text('Home')),
       const Center(child: Text('Search')),
-      const Center(child: Text('Profile')),
       const Center(child: Text('Settings')),
+      const Center(child: Text('Profile')),
     ];
   }
 
@@ -107,29 +110,42 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatyTab(
             isSelected: selectedTab == 2,
             onTap: () => changeTab(2),
-            title: 'Profile',
-            selectedColor: Colors.green,
-            icon: HugeIcon(
-              icon: HugeIcons.strokeRoundedPresentationOnline,
-              color: selectedTab == 2 ? Colors.white : Colors.black,
-            ),
-            floatyActionButton: FloatyActionButton(
-              icon: const Icon(Icons.edit),
-              onTap: () => showSnackBar('Edit button tapped'),
-              backgroundColor: Colors.green,
-            ),
-          ),
-          FloatyTab(
-            isSelected: selectedTab == 3,
-            onTap: () => changeTab(3),
             title: 'Watt',
             icon: SvgPicture.asset(
               'assets/wat.svg',
               width: 24,
               height: 24,
-              colorFilter: selectedTab == 3
+              colorFilter: selectedTab == 2
                   ? const ColorFilter.mode(Colors.white, BlendMode.srcIn)
                   : null,
+            ),
+          ),
+          FloatyTab(
+            isSelected: selectedTab == 3,
+            onTap: () => changeTab(3),
+            title: 'Profile',
+            selectedColor: Colors.green,
+            icon: HugeIcon(
+              icon: HugeIcons.strokeRoundedProfile02,
+              color: selectedTab == 3 ? Colors.white : Colors.black,
+            ),
+            floatyActionButton: FloatyActionButton(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.white,
+              heroTag: imagePath,
+              icon: ClipOval(
+                child: Image.network(
+                  imagePath,
+                  width: 56,
+                  height: 56,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PhotoHero(photo: imagePath),
+                ),
+              ),
             ),
           ),
         ],
