@@ -1,6 +1,7 @@
 import 'package:floaty_nav_bar/res/models/floaty_shape.dart';
 import 'package:floaty_nav_bar/res/models/floaty_tab.dart';
 import 'package:floaty_nav_bar/res/utils/context_extension.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// A widget that represents a single tab in the floating navigation bar.
@@ -29,8 +30,10 @@ class FloatyTabWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: floatyTab.onTap,
+    return CupertinoButton(
+      onPressed: floatyTab.onTap,
+      padding: EdgeInsets.zero,
+      focusColor: floatyTab.selectedColor ?? context.primaryColor,
       child: AnimatedContainer(
         duration: context.mediumDuration,
         curve: Curves.easeInOut,
