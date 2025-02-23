@@ -143,6 +143,21 @@ class _FloatyNavBarState extends State<FloatyNavBar> {
                   foregroundColor:
                       _floatyStyle?.foregroundColor ?? context.onPrimaryColor,
                   onPressed: _floatyStyle?.onTap,
+                  heroTag: _floatyStyle?.heroTag,
+                  autofocus: _floatyStyle?.autofocus ?? false,
+                  clipBehavior: _floatyStyle?.clipBehavior ?? Clip.none,
+                  enableFeedback: _floatyStyle?.enableFeedback ?? true,
+                  focusColor: _floatyStyle?.focusColor ?? context.primaryColor,
+                  hoverColor: _floatyStyle?.hoverColor ?? context.primaryColor,
+                  splashColor:
+                      _floatyStyle?.splashColor ?? context.primaryColor,
+                  tooltip: _floatyStyle?.tooltip,
+                  mini: _floatyStyle?.mini ?? false,
+                  focusNode: _floatyStyle?.focusNode,
+                  isExtended: _floatyStyle?.isExtended ?? false,
+                  key: ValueKey(_floatyStyle?.icon.hashCode),
+                  materialTapTargetSize: _floatyStyle?.materialTapTargetSize,
+                  mouseCursor: _floatyStyle?.mouseCursor,
                   child: AnimatedSwitcher(
                     duration: context.mediumDuration,
                     transitionBuilder: (child, animation) {
