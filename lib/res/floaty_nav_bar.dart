@@ -106,20 +106,23 @@ class _FloatyNavBarState extends State<FloatyNavBar> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.all(4),
-              decoration: ShapeDecoration(
-                color: widget.backgroundColor ?? context.surfaceColor,
-                shape: widget.shape.shapeBorder,
-                shadows: widget.boxShadow ?? [context.boxShadow],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: widget.tabs.map((tab) {
-                  return FloatyTabWidget(floatyTab: tab, shape: widget.shape);
-                }).toList(),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Container(
+                padding: const EdgeInsets.all(4),
+                decoration: ShapeDecoration(
+                  color: widget.backgroundColor ?? context.surfaceColor,
+                  shape: widget.shape.shapeBorder,
+                  shadows: widget.boxShadow ?? [context.boxShadow],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: widget.tabs.map((tab) {
+                    return FloatyTabWidget(floatyTab: tab, shape: widget.shape);
+                  }).toList(),
+                ),
               ),
             ),
             AnimatedSize(

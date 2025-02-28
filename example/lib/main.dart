@@ -134,8 +134,8 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.white,
               heroTag: imagePath,
               icon: ClipOval(
-                child: Image.network(
-                  imagePath,
+                child: Image.asset(
+                  'assets/profile.jpg',
                   width: 56,
                   height: 56,
                   fit: BoxFit.cover,

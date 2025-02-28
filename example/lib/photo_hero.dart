@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({
-    super.key,
-    required this.photo,
-  });
+  const PhotoHero({super.key, required this.photo});
 
   final String photo;
 
@@ -12,9 +9,7 @@ class PhotoHero extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Photo Hero'),
-      ),
+      appBar: AppBar(title: const Text('Photo Hero')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,9 +17,9 @@ class PhotoHero extends StatelessWidget {
           Hero(
             tag: photo,
             child: ClipOval(
-              child: Image.network(
-                photo,
-                fit: BoxFit.contain,
+              child: Image.asset(
+                'assets/profile.jpg',
+                fit: BoxFit.cover,
                 height: 200,
                 width: 200,
               ),
@@ -32,9 +27,7 @@ class PhotoHero extends StatelessWidget {
           ),
           SizedBox(height: 16, width: size.width),
           ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
+            onPressed: () => Navigator.of(context).pop(),
             child: const Text('Go back!'),
           ),
         ],

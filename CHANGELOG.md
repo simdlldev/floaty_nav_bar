@@ -3,6 +3,7 @@
 ### Fixed
 - Issue where the ink overlay did not take the shape of the tab shape on the tabs when tapped 
 - Hero tag for `FloatyActionButton` not being expose to the user
+- fix MouseRegion not being able to detect mouse hover on the `FloatyActionButton`
 
 ## [1.0.1] - 2025-02-05
 
